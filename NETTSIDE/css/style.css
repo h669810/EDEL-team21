@@ -1,0 +1,499 @@
+@font-face {
+    font-family: Alaska;
+    src: url("../fonts/alaska.ttf") format("truetype");
+    font-display: swap
+}
+
+:root {
+    --section-spacing: 3.5rem;
+
+    --gray1: hsl(195, 9%, 9%);
+    --gray2: hsl(180, 10%, 12%);
+    --gray3: hsl(180, 7%, 15%);
+    --gray4: hsl(180, 8%, 18%);
+    --gray5: hsl(180, 8%, 23%);
+    --gray6: hsl(180, 7%, 32%);
+    --gray7: hsl(180, 8%, 39%);
+    --gray8: hsl(180, 8%, 49%);
+    --gray9: hsl(180, 12%, 61%);
+    --gray10: hsl(180, 20%, 85%);
+    --gray11: hsl(180, 25%, 92%);
+    --gray12: hsl(0, 0%, 97%);
+    --white: hsl(0, 0%, 96%);
+    --fullywhite: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --darkgrey: hsl(0, 0%, 14%);
+    --whiteop: hsl(0, 0%, 96%,90%);
+    --pink: hsl(340, 100%, 50%);
+    --pinklight: hsl(340, 100%, 60%);
+    --pinkdk: hsl(340, 72%, 35%);
+    --pinkop: hsl(340, 100%, 50%, 20%);
+    --pinktxt:hsl(340, 100%, 75%);
+    /*--pink: hsl(204, 100%, 50%);*/
+    --red: hsl(0, 100%, 50%);
+
+    --fs-300: 1rem;
+    --fs-400: 1.125rem;
+    --fs-500: 1.563rem;
+    --fs-600: 1.953rem;
+    --fs-700: 2.441rem;
+    --fs-800: 3.052rem;
+
+    --bergen: hsl(352, 100%, 57%);
+    --oslo: hsl(212, 100%, 57%);
+    --trondheim: hsl(122, 98%, 44%);
+    --biler: hsl(157, 100%, 57%);
+    --baater: hsl(278, 100%, 57%);
+    --sykler: hsl(71, 100%, 57%);
+    --oversikt: hsl(0, 0%, 100%);
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+body,
+h1,
+h2,
+p {
+    margin: 0
+}
+
+html, body {
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.6;
+    font-size: 16px;
+
+    margin: 0;
+    width: 100%;
+    height: 100%;
+
+    font-size: var(--fs-400);
+    font-family: Alaska, sans-serif;
+    color: var(--gray2);
+    letter-spacing: -.5px;
+}
+
+* {
+    font-variation-settings: "wght"var(--font-weight, 375), "wdth"var(--font-width, 80)
+}
+
+h1,h2{
+    --font-weight:700;
+    --font-width:80;
+    font-weight:400;
+    font-stretch:100%;
+    line-height: 1.1;
+    color: var(--gray6);
+}
+
+h1 {
+    --font-weight: 900;
+    color: var(--pink);
+
+    font-size: var(--fs-800);
+}
+
+h2 {
+    font-size: var(--fs-700);
+    --flow-spacer:1.5em;
+}
+
+strong {
+    --font-weight: 500;
+    font-weight: 400;
+}
+
+a {
+    color: var(--pink);
+    text-decoration: none;
+}
+
+p:not([class]) {
+    max-width: 60ch;
+}
+
+ul {
+    list-style-type: none;
+}
+
+body {
+    min-height: 100vh;
+    
+}
+
+.wrapper, .fullwidth_wrapper {
+    position: relative;
+    top:75px;
+    width: 80%;
+    margin: auto;
+    padding: 4rem 0 3rem 0;
+    overflow-x: hidden;
+}
+.fullwidth_wrapper {
+    width: 100%;
+    background-color: var(--darkgrey);
+    padding: 2rem 0 0 0;
+}
+.wrapper_split {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.split:last-child {text-align: right;}
+.colored_background {
+    color: white!important;
+    font-weight: 00;
+}
+
+.content_header_div {
+    position: relative;
+    height: fit-content;
+    width: 100%;
+    text-align: center;
+}
+
+@keyframes slide_in_from_right {
+    0% {
+        transform: translateX(100%);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.pictures_div {
+    position: relative;
+    width: 60%;
+    height: 40%;
+    margin: 3rem auto;
+
+    animation: 2s ease 0s 1 slide_in_from_right;
+
+    display: flex;
+    justify-content: center;
+}
+
+.frontpage_img {
+    max-width: 70%;
+}
+
+.content_header_text {
+    color: var(--darkgrey);
+}
+.content_header_description {
+    margin: .8rem 0 0 0;
+}
+
+.only_mobile {
+    display: none;
+}
+
+.only_desktop {
+    display: unset;
+}
+
+.button {
+    padding: .5rem .9rem;
+    border-radius: .6rem;
+    text-align: center;
+    display: inline-block;
+    height: 2rem;
+    background-color: var(--white);
+    color: var(--darkgrey);
+    font-size: 1rem;
+    line-height: 1.3rem;
+    margin: 0 0 .5rem 0
+}
+
+.vehicle_container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+.vehicle {
+    margin: 1.5rem;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: auto auto;
+}
+.vehicle_img {
+    max-width: 100%;
+    margin: auto;
+
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.vehicle_title {
+    margin: 0 0 0 .7rem;
+    padding: 0;
+    font-size: 1.3rem;
+    text-align: left;
+    font-weight: 400;
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+.vehicle_description {
+    font-size: 1.5rem;
+}
+.vehicle_specs {
+    margin: .5rem 0;
+    list-style: square;
+    text-align: left;
+    min-height: fit-content;
+
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.soon {
+    background: rgba(128, 128, 128, 0.733);
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.soon_text {
+    color: white;
+}
+
+.one_vehicle { 
+    display: block;
+    grid-template-columns: unset!important;
+}
+.vehicle1 {
+    width: 60%;
+    margin: auto;
+}
+
+.user_container {
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 4rem 0 0 0;
+}
+
+.container_one {
+    width: 40%;
+    margin: 4rem auto 1rem auto;
+}
+
+.login, .register {
+    padding: 2rem 1.5rem;
+    display: flex;
+    position: relative;
+    border: 1px solid var(--gray8);
+    width: 100%;
+}
+.register {
+    margin: 0 2.3rem 0 0;
+}
+.login_content {
+    width: 100%;
+}
+
+.login_title {
+    position: absolute;
+    max-width: fit-content;
+    top: -24px;
+    left: 0px;
+    right: 0px;
+    margin: 0px auto;
+    background: var(--fullywhite);
+    color: var(--darkgrey);
+    padding: .5rem 1.7rem;
+    font-weight: 700;
+    font-size: .9rem;
+    line-height: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register_email, .login_email {
+    color: var(--darkgrey);
+    display: flex;
+    padding: 1rem 1.5rem;
+    border-radius: .4rem;
+    border: 1px solid var(--darkgrey);
+    box-shadow: rgb(0 0 0 / 8%) 0px 0px 20px;
+    margin: 0 0 .9rem;
+    box-sizing: border-box;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.login_field {
+    margin: 0 0 .9rem;
+    position: relative;
+}
+.field {
+    width: 100%;
+    padding: .4rem .4rem .4rem 2.3rem;
+    border-radius: .4rem;
+    border: 1px solid var(--darkgrey);
+    box-shadow: rgb(0 0 0 / 8%) 0px 0px 20px;
+    font-size: 16px;
+}
+.field_icon {
+    position: absolute;
+    top: 2.08rem;
+    left: .5rem;
+}
+.label {
+    font-size: 18px;
+    color: var(--gray5);
+    text-overflow: clip;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+
+.form_button {
+    width: 100%;
+    font-size: 14px;
+    color: var(--white);
+    padding: .6rem .6rem;
+    margin: .3rem 0 0 0;
+    background-color: var(--pink);
+    border: 0;
+    border-bottom: 3px solid var(--pinkdk);
+    border-radius: .3rem;
+}
+.form_button:hover {
+    background-color: var(--pinklight);
+}
+#wrong_password {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--red);
+    opacity: 0;
+}
+
+.mypage_container {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    gap: 4%;
+    padding: 1rem 1% 1rem 1%;
+    margin: 1rem 0 0 0;
+    width: 100%;
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: rgb(0 0 0 / 20%) 2px 2px 7px;
+    padding: 2rem;
+    height: 18rem;
+}
+.card > svg {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+}
+.card_title {
+    margin: 0;
+    font-size: 20px;
+}
+.card_description {
+    font-size: 16px;
+}
+.card_link {
+    font-size: 16px;
+}
+#map {
+    height: 500px;
+    width: 100%;
+    margin: 2rem 0 0 0;
+}
+.medlemskap_container {
+    margin: 2rem 0 0 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.medlemskap_card {
+    position: relative;
+    display: flex;
+    max-width: 30%;
+    min-height: 10rem;
+    margin: 0 auto;
+    padding: 2rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: rgb(0 0 0 / 20%) 2px 2px 7px;
+    text-align: left;
+}
+.medlemskap_list {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.content_header_div > em {
+    font-size: 14px;
+}
+.medlemskap_card > ul > li {
+    list-style: square;
+}
+.medlemskap_card:hover {
+    cursor: pointer;
+}
+
+.about_list {
+    list-style: square;
+    white-space: nowrap;
+}
+.split:last-child .about_list {direction: rtl;}
+
+@media only screen and (max-width: 62em) {
+    .vehicle_container {grid-template-columns: 100%}
+    .vehicle1 {width: 80%;}
+    .container_one {width: 60%;}
+    .medlemskap_container {flex-direction: column; gap: 2rem;}
+    .medlemskap_card {max-width: unset; width: 80%; margin: auto;}
+}
+@media only screen and (max-width: 50em) { 
+    .only_mobile {display: flex;}
+    .only_desktop {display: none;}
+    .vehicle1 {width: 90%;}
+    .user_container {flex-flow: column nowrap;}
+    .register {margin: 0 0 2.3rem 0;}
+    .container_one {width: 80%; margin: 1rem auto;}
+    .medlemskap_card {width: 90%;}
+    .vehicle {grid-template-rows: auto auto auto;}
+    .vehicle_img {grid-column-start: 1;grid-column-end: 3;grid-row-start: 1;grid-row-end: 2;}
+    .vehicle_title {grid-column-start: 1;grid-column-end: 3;grid-row-start: 2;grid-row-end: 3;}
+    .vehicle_specs {grid-column-start: 1;grid-column-end: 3;grid-row-start: 3;grid-row-end: 4;}
+    .vehicle_container {padding: 0;}
+    .soon {grid-column-start: 1;grid-column-end: 3;grid-row-start: 1;grid-row-end: 4;}
+    .wrapper_split {flex-direction: column;}
+    .split:last-child {text-align: left!important;}
+    .split:last-child .about_list {direction: ltr!important;}
+}
+@media only screen and (max-width: 36em) {
+    .vehicle {margin: .5rem 0; grid-template-rows: auto auto auto;}
+    .vehicle_title {font-size: 1rem;}
+    .vehicle_title strong {font-size: 1.4rem!important;}
+    .vehicle_description {font-size: 1.1rem;}
+    .vehicle_specs p {font-size: .9rem;}
+    .vehicle1 {width: 100%;}
+    .container_one {width: 100%;}
+    .medlemskap_card {width: 95%;}
+    .content_header_text {font-size: var(--fs-600);}
+}

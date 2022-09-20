@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logg inn</title>
+    <meta name="description"
+        content="EDEL er en nettside for deling av ulike elektriske kjøretøy.">
+    <meta property="og:title" content="EDEL">
+    <meta property="og:description" content="">
+    <meta name="twitter:card" content="summary_large_image">
+    <script src="https://kit.fontawesome.com/0e31a3f0de.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="pictures/EDEL.ico">
+
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/index.js"></script>
+    <script defer src="js/userlog.js"></script>
+</head>
+<body>
+    <div class="top_bar">
+        <div class="top_bar_header_div" onclick="pageRedirect_1()">
+            <img src="pictures/EDEL.png" alt="" class="logo">
+            <h1 class="top_bar_header_text">EDEL</h1>
+        </div>
+        <ul class="top_bar_buttons">
+            <li class="only_mobile" id="member_container">
+                <div class="become_member">
+                    <a class="button" href="register.html">Bli medlem</a>
+                    <a class="already_member" href="login.html">Allerede en medlem?</a>
+                </div>
+            </li>
+            <li class="only_mobile" id="logoff_container">
+                <div class="become_member">
+                    <a class="button" onclick="logoff()">Logg av</a>
+                </div>
+            </li>
+            <!-- <li class="only_desktop">
+                <button class="buttons" onclick="pageRedirect_1()">Hjem</button>
+            </li> -->
+            <li>
+                <button class="buttons utlaanB" id="utlaanB" onclick="pageRedirect_2()" aria-expanded="false">Utlånssteder</button>
+                <ul class="submenu utlaan">
+                    <li>
+                        <a href="lokasjoner.html" class="submenu_item only_mobile">
+                            <div class="submenu_icon" style="background-color: var(--oversikt)"></div>
+                            <div class="submenu_content">
+                                <div class="submenu_header">Oversikt over lokasjoner</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="bergen.html" class="submenu_item">
+                            <div class="submenu_icon" style="background-color: var(--bergen)"></div>
+                            <div class="submenu_content">
+                                <div class="submenu_header">Bergen</div>
+                                <p class="submenu_description">ved Marineholmen</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="oslo.html" class="submenu_item">
+                            <div class="submenu_icon" style="background-color: var(--oslo)"></div>
+                            <div class="submenu_content">
+                                <div class="submenu_header">Oslo</div>
+                                <p class="submenu_description">ved Bjørvika</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="trondheim.html" class="submenu_item">
+                            <div class="submenu_icon" style="background-color: var(--trondheim)"></div>
+                            <div class="submenu_content">
+                                <div class="submenu_header">Trondheim</div>
+                                <p class="submenu_description">ved NTNU</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <button class="buttons kjoretoyB" id="kjoretoyB" onclick="pageRedirect_3()" aria-expanded="false">Kjøretøy</button>
+                <ul class="submenu kjoretoy">
+                    <li>
+                        <a href="kjoretoy.html" class="submenu_item only_mobile">
+                            <div class="submenu_icon" style="background-color: var(--oversikt)"></div>
+                            <div class="submenu_content">
+                                <div class="submenu_header">Oversikt over kjøretøy</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="biler.html" class="submenu_item">
+                            <div class="submenu_icon" style="background-color: var(--biler)"></div>
+                            <div class="submenu_content">
+                                <div class="submenu_header">Biler</div>
+                                <p class="submenu_description">Markedets beste biler</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="baater.html" class="submenu_item">
+                            <div class="submenu_icon" style="background-color: var(--baater)"></div>
+                            <div class="submenu_content">
+                                <div class="submenu_header">Båter</div>
+                                <p class="submenu_description">Kan nesten kalle de yachter</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sykler.html" class="submenu_item">
+                            <div class="submenu_icon" style="background-color: var(--sykler)"></div>
+                            <div class="submenu_content">
+                                <div class="submenu_header">Sykler</div>
+                                <p class="submenu_description">Man trenger raske briller for disse</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <button class="buttons medlemskapB" id="medlemskapB" onclick="pageRedirect_member()" aria-expanded="false">Medlemskap</button>
+                <ul class="submenu medlemskap only_mobile">
+                    <li>
+                        <a href="member.html" class="submenu_item only_mobile">
+                            <div class="submenu_icon" style="background-color: var(--oversikt);"></div>
+                            <div class="submenu_content">
+                                <div class="submenu_header">Oversikt over våre medlemskap</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="breaker"></div>
+        <div>
+            <button class="buttons medlemB" onclick="pageRedirect_mypage()"><img src="pictures/user-regular.svg" alt="" class="medlem_logo"></button>
+            <ul class="submenu medlem">
+                <li id="mypage">
+                    <a href="minside.html" class="submenu_item">
+                        <img src="pictures/user-solid.svg" alt="" class="medlem_icon">
+                        <div class="submenu_content">
+                            <div class="submenu_header minside">Min side</div>
+                        </div>
+                    </a>
+                </li>
+                <li id="logoff">
+                    <div onclick="logoff()" class="submenu_item" id="loggAV">
+                        <img src="pictures/power-off-solid.svg" alt="" class="medlem_icon">
+                        <div class="submenu_content">
+                            <div class="submenu_header minside">Logg av</div>
+                        </div>
+                    </div>
+                </li>
+                <li id="logon">
+                    <a href="welcome.html" class="submenu_item" id="loggPAA">
+                        <img src="pictures/user-regular.svg" alt="" class="medlem_icon">
+                        <div class="submenu_content">
+                            <div class="submenu_header minside">Logg inn</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="burger" onclick="bButtonclicked()">
+            <div class="burger_button" id="bButton">
+                <div class="lineT"></div>
+                <div class="line"></div>
+                <div class="lineB"></div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="content_header_div">
+            <h3 class="content_header_text" style="text-align: left;">Du er snart i mål, vi må bare vite hvem vi skal leie ut kjøretøyet til...</h3>
+        </div>
+        <div class="user_container">
+            <div class="register">
+                <strong class="login_title">Ny kunde hos EDEL?</strong>
+                <div class="login_content">
+                    <a href="register.html" class="register_email">Registrer deg med epost
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" fill="none" stroke="var(--darkgrey)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="login">
+                <strong class="login_title">Logg inn med eksisterende bruker</strong>
+                <div class="login_content">
+                    <a href="login.html" class="login_email">Logg inn med epost
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" fill="none" stroke="var(--darkgrey)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
