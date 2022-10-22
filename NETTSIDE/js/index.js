@@ -6,6 +6,11 @@ const utlaanB = document.getElementById("utlaanB")
 const kjoretoyB = document.getElementById("kjoretoyB")
 const medlemskapB = document.getElementById("medlemskapB")
 
+function getParameter(parameterName) {
+    let parameters = new URLSearchParams(window.location.search)
+    return parameters.get(parameterName)
+}
+
 function pageRedirect_1() {
     window.location.href = "index.html"
 }
