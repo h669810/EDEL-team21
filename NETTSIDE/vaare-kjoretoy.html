@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logg inn</title>
+    <title>Våre biler</title>
     <meta name="description"
         content="EDEL er en nettside for deling av ulike elektriske kjøretøy.">
     <meta property="og:title" content="EDEL">
@@ -169,24 +169,73 @@
         </div>
     </div>
     <div class="wrapper">
-        <div class="user_container container_one">
-            <div class="login">
-                <strong class="login_title">Logg inn eksisterende bruker</strong>
-                <div class="login_content">
-                    <div class="login_field" style="justify-content: left;">
-                        <label for="email" class="label">E-post</label>
-                        <svg class="field_icon" xmlns="http://www.w3.org/2000/svg" width="24" style="margin-right: .7rem;" viewBox="0 0 24 24" fill="none" stroke="var(--darkgrey)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        <input class="field" type="email" maxlength="70" id="email" placeholder="eksempel@epost.no">
-                    </div>
-                    <div class="login_field" style="justify-content: left;">
-                        <label for="password" class="label">Passord</label>
-                        <svg class="field_icon" xmlns="http://www.w3.org/2000/svg" width="24" style="margin-right: .7rem;" viewBox="0 0 24 24" fill="none" stroke="var(--darkgrey)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                        <input class="field" type="password" maxlength="50" id="password" placeholder="******">
-                    </div>
-                    <div class="login_submit">
-                        <button type="submit" class="form_button" id="loginButton" onclick="login()">Logg inn</button>
-                        <p id="wrong_password">Vennligst sjekk passord og epost og prøv igjen.</p>
-                    </div>
+        <div class="content_header_div">
+            <h1 class="content_header_text">Kjøretøyene vi tilbyr</h1>
+            <div class="vehicle_container_small">
+                <h3 class="content_header_text left">Våre biler</h3>
+                <div class="vehicle" onclick="location.href='kjoretoy.html'+'?kjoretoy='+0;">
+                    <img class="vehicle_img" src="pictures/xpengp7.png" alt="" style="aspect-ratio: 620/277;">
+                    <h3 class="vehicle_title"><strong style="font-size: 1.7rem;">XPENG P7</strong> SEDAN</h3>
+                    <ul class="vehicle_specs">
+                        <li>
+                            <p>706km - NEDC Rekkevidde</p>
+                        </li>
+                        <li>
+                            <p>4.5s - 0-100km/t Akselerasjon</p>
+                        </li>
+                        <li>
+                            <p>XPILOT 3.0 - ADAS</p>
+                        </li>
+                    </ul>
+                </div>  
+                <div class="vehicle" onclick="location.href='kjoretoy.html'+'?kjoretoy='+1;" style="cursor:unset!important">
+                    <div class="soon"><h1 class="soon_text">KOMMER SNART</h1></div>
+                    <img class="vehicle_img" src="pictures/xc40.png" alt="" style="aspect-ratio: 2514/1124;">
+                    <h3 class="vehicle_title"><strong style="font-size: 1.7rem;">Volvo XC40 Recharge</strong> SUV</h3>
+                    <ul class="vehicle_specs">
+                        <li>
+                            <p>433km - WLTP Rekkevidde</p>
+                        </li>
+                        <li>
+                            <p>4.9s - 0-100km/t Akselerasjon</p>
+                        </li>
+                        <li>
+                            <p>28min - Hurtiglading 10-80%</p>
+                        </li>
+                    </ul>
+                </div>
+                <h3 class="content_header_text left">Våre båter</h3>
+                <div class="vehicle" onclick="location.href='kjoretoy.html'+'?kjoretoy='+2;">
+                    <img class="vehicle_img" src="pictures/hydrolifte-22 no bg.png" alt="">
+                    <h3 class="vehicle_title"><strong style="font-size: 1.7rem;">Hydrolift E-22</strong> Hurtigående elbåt</h3>
+                    <ul class="vehicle_specs">
+                        <li>
+                            <p>150 hk - Evoy Galeforce Outboard</p>
+                        </li>
+                        <li>
+                            <p>40 knop - Maks hastighet</p>
+                        </li>
+                        <li>
+                            <p>5 knop - ca. 7 timer, 23 knop - ca. 1 time</p>
+                        </li>
+                    </ul>
+                </div>
+                <h3 class="content_header_text left">Våre sykler</h3>
+                <div class="vehicle" onclick="location.href='kjoretoy.html'+'?kjoretoy='+3;">
+                    <img class="vehicle_img" src="pictures/jason22.png" alt="" style="aspect-ratio: 1022/480;">
+                    <h3 class="vehicle_title"><strong style="font-size: 1.7rem;">MOMAS Jason 2022</strong> Terrengsykkel
+                    </h3>
+                    <ul class="vehicle_specs">
+                        <li>
+                            <p>Opptil 100km - Rekkevidde</p>
+                        </li>
+                        <li>
+                            <p>36V 250w - Krankmotor</p>
+                        </li>
+                        <li>
+                            <p>23kg - Vekt</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

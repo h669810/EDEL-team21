@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logg inn</title>
+    <title>Våre biler</title>
     <meta name="description"
         content="EDEL er en nettside for deling av ulike elektriske kjøretøy.">
     <meta property="og:title" content="EDEL">
@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="css/style.css">
     <script defer src="js/index.js"></script>
     <script defer src="js/userlog.js"></script>
+    <script defer src="js/vehicle.js"></script>
+
 </head>
 <body>
     <div class="top_bar">
@@ -169,25 +171,115 @@
         </div>
     </div>
     <div class="wrapper">
-        <div class="user_container container_one">
-            <div class="login">
-                <strong class="login_title">Logg inn eksisterende bruker</strong>
-                <div class="login_content">
-                    <div class="login_field" style="justify-content: left;">
-                        <label for="email" class="label">E-post</label>
-                        <svg class="field_icon" xmlns="http://www.w3.org/2000/svg" width="24" style="margin-right: .7rem;" viewBox="0 0 24 24" fill="none" stroke="var(--darkgrey)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                        <input class="field" type="email" maxlength="70" id="email" placeholder="eksempel@epost.no">
+        <div class="vehicle_page_container">
+            <img class="vehicle_img" id="vehicleImg" src="" alt="" style="aspect-ratio: 620/277;">
+            <h3 class="vehicle_title" id="vehicleTitle"><strong></strong></h3>
+            <ul class="vehicle_specs">
+                <li>
+                    <p id="vehicleText1"></p>
+                </li>
+                <li>
+                    <p id="vehicleText2"></p>
+                </li>
+                <li>
+                    <p id="vehicleText3"></p>
+                </li>
+            </ul>
+            <div class="vehicle_rent">
+                <form action="rent_container">
+                    <label for="location">Lokasjon: </label>
+                    <select name="location" id="location">
+                        <option value="bergen">Bergen</option>
+                        <option value="oslo">Oslo</option>
+                        <!-- <option value="trondheim">Trondheim</option> -->
+                    </select>
+                </form>
+                <div class="rent_date">
+                    <div class="rent_date_start">
+                        <div class="rent_date_title">
+                            <div class="rent_icon"></div>
+                            <p>DATO<br>FOR<br>HENTING</p>
+                        </div>
+                        <input type="date" id="start" name="rent-start" value="">
+                        <select name="hour" id="starthour">
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                        </select>
+                        <span class="colon"> : </span>
+                        <select name="minute" id="startminute">
+                            <option value="00">00</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
                     </div>
-                    <div class="login_field" style="justify-content: left;">
-                        <label for="password" class="label">Passord</label>
-                        <svg class="field_icon" xmlns="http://www.w3.org/2000/svg" width="24" style="margin-right: .7rem;" viewBox="0 0 24 24" fill="none" stroke="var(--darkgrey)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                        <input class="field" type="password" maxlength="50" id="password" placeholder="******">
-                    </div>
-                    <div class="login_submit">
-                        <button type="submit" class="form_button" id="loginButton" onclick="login()">Logg inn</button>
-                        <p id="wrong_password">Vennligst sjekk passord og epost og prøv igjen.</p>
+                    <div class="rent_date_end">
+                        <div class="rent_date_title">
+                            <div class="rent_icon"></div>
+                            <p>DATO<br>FOR<br>LEVERING</p>
+                        </div>
+                        <input type="date" id="end" name="rent-end" value="">
+                        <select name="hour" id="endhour">
+                            <option value="00">00</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                        </select>
+                        <span class="colon"> : </span>
+                        <select name="minute" id="endminute">
+                            <option value="00">00</option>
+                            <option value="15">15</option>
+                            <option value="30">30</option>
+                            <option value="45">45</option>
+                        </select>
                     </div>
                 </div>
+                <p id="errorMsg"> </p>
+                <button id="check_availability" onclick="checkAvailability()">Sjekk tilgjengelighet</button>
+                <p class="available">Tilgjengelige: <span id="available">--</span></p>
+                <button id="rent_button" onclick="rentVehicle()">Lei på medlemskap</button>
             </div>
         </div>
     </div>

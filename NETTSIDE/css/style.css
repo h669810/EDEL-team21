@@ -46,6 +46,7 @@
     --baater: hsl(278, 100%, 57%);
     --sykler: hsl(71, 100%, 57%);
     --oversikt: hsl(0, 0%, 100%);
+    --rent: var(--pink);
 }
 
 * {
@@ -66,6 +67,7 @@ html, body {
     line-height: 1.6;
     font-size: 16px;
 
+    overflow-x: hidden;
     margin: 0;
     width: 100%;
     height: 100%;
@@ -101,9 +103,23 @@ h2 {
     --flow-spacer:1.5em;
 }
 
+h3 {
+    font-size: var(--fs-600);
+}
+
+.left {
+    text-align: left;
+    margin: 1.5rem;
+}
+.right {
+    text-align: right;
+    margin: 1.5rem;
+}
+
 strong {
     --font-weight: 500;
     font-weight: 400;
+    font-size: 1.7rem;
 }
 
 a {
@@ -131,6 +147,7 @@ body {
     margin: auto;
     padding: 4rem 0 3rem 0;
     overflow-x: hidden;
+    min-height: 100%;
 }
 .fullwidth_wrapper {
     width: 100%;
@@ -221,6 +238,7 @@ body {
     display: grid;
     grid-template-columns: 40% 60%;
     grid-template-rows: auto auto;
+    cursor: pointer;
 }
 .vehicle_img {
     max-width: 100%;
@@ -453,6 +471,181 @@ body {
 }
 .medlemskap_card:hover {
     cursor: pointer;
+}
+
+.vehicle_page_container {
+    margin: 1.5rem;
+    display: grid;
+    grid-template-columns: 45% 20% 35%;
+    grid-template-rows: 20% auto;
+}
+.vehicle_page_container > .vehicle_img {
+    max-width: 100%;
+    margin: auto;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.vehicle_page_container > .vehicle_title {
+    max-width: 100%;
+    margin: auto;
+    margin-left: 0;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.vehicle_rent {
+    background: var(--white);
+    border-radius: 1rem;
+    box-shadow: rgb(0 0 0 / 9%) 6px 6px 12px 0px;
+    
+    padding: 1.2rem;
+
+    max-width: 100%;
+    width: 100%;
+    height: 100%;    
+
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.rent_location {
+    margin: auto;
+}
+
+.rent_date {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    gap: 5px;
+}
+
+.rent_date_start, .rent_date_end {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.rent_date_title {
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    align-items: center;
+    min-width: fit-content;
+    width: 25%;
+}
+
+.rent_icon {
+    width: .15rem;
+    height: 90%;
+    position: relative;
+    display: block;
+    margin-right: .5rem;
+    border-radius: 1rem;
+    background-color: var(--rent);
+}
+
+.available {
+    font-size: 1rem;
+}
+#errorMsg {
+    min-height: 1.2rem;
+    font-size: .8rem;
+    color: red;
+    margin: .3rem 0 0 0;
+}
+
+.colon {
+    height: 100%;
+    align-self: center;
+}
+
+#rent_button, #check_availability {
+    margin: .7rem 0 0 0;
+    outline: 0;
+    border: 0;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    background: var(--pink);
+    color: white;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+#rent_button:hover, #check_availability:hover {
+    background: var(--pinklight);
+}
+#rent_button:focus, #check_availability:focus {
+    outline: 1px solid black;
+}
+
+footer {
+    position: relative;
+    display: flex;
+    margin-top: 75px;
+    flex-direction: column;
+    border-top: 1px solid #ccc;
+}
+.footer_container {
+    display: grid;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+    max-width: 1200px;
+    grid-gap: 8px;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    overflow: hidden;
+}
+.footer_list {
+    max-width: 100%;
+    width: 200px;
+}
+.footer_list img {
+    max-width: 70%;
+}
+.footer_list ul {
+    list-style: none;
+    padding: 0;
+}
+.footer_list ul li a {
+    color: var(--black);
+    font-size: 1rem;
+}
+.footer_header {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+    border-bottom: 1px solid #ccc;
+}
+
+.footer_socials {
+    height: fit-content;
+    width: 100%;
+    background: #5f5f5f;
+}
+.socials_container {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.social_icon {
+    padding: 0 6px;
+    align-items: center;
+    display: flex;
+}
+.social_icon a {
+    height: 40px;
+}
+.social_icon img {
+    width: 40px;
+    height: 40px;
 }
 
 .about_list {
